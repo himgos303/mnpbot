@@ -32,9 +32,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(response_text)
 
 if __name__ == "__main__":
-    application = ApplicationBuilder().token("7824028069:AAERlam8M4ktTnUfzg3b0Tjx4vYlSKUqzyY").build()
+    import os
+
+TOKEN = os.getenv("7824028069:AAERlam8M4ktTnUfzg3b0Tjx4vYlSKUqzyY")
+application = ApplicationBuilder().token(TOKEN).build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
     application.run_polling()
+
