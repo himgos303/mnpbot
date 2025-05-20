@@ -1,0 +1,13 @@
+from predict_operator import predict_operator
+
+test_numbers = [
+    "8279368498",
+    "9876543210",
+    "8123456789",
+    "7012345678",
+    "6283456789"
+]
+
+for num in test_numbers:
+    operator, circle = predict_operator(num)
+    print(f"{num} => Operator: {operator}, Circle: {circle}")
